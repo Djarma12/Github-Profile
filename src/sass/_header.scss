@@ -1,0 +1,25 @@
+.header {
+  background-image: url(../../public/hero-image-github-profile.png);
+  height: 30rem;
+  background-position: center;
+  background-size: cover;
+  padding-top: 5rem;
+
+  &__search {
+    background-color: $color-grey-dark-1;
+    width: 50rem;
+    margin-inline: auto;
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+    transition: 0.3s all;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    &:hover,
+    &:has(.input:focus) {
+      transform: scaleX(1.05);
+    }
+  }
+}

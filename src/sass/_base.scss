@@ -1,0 +1,68 @@
+// COLOR VARIABLES
+$color-white: #cdd5e0;
+$color-grey-light-1: #4a5567;
+$color-grey-light-2: #364153;
+
+$color-grey-dark-1: #20293a;
+$color-grey-dark-2: #111729;
+
+$color-blue-light: #3662e3;
+$color-blue-dark: #1d1b48;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+
+/*
+- Font sizes (px)
+12 / 16 / 20 / 32
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.6rem;
+  color: $color-white;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $color-grey-dark-1;
+}
+
+.main {
+  margin-inline: auto;
+  width: 120rem;
+}
+
+.input {
+  background-color: $color-grey-dark-1;
+  border: none;
+  width: 100%;
+  color: $color-white;
+  outline: none;
+  font-size: 2rem;
+
+  &::placeholder {
+    color: $color-grey-light-1;
+  }
+}
