@@ -1,32 +1,51 @@
 .profile {
+  margin-top: -4.8rem;
+  margin-bottom: 4.8rem;
+
   display: flex;
-  justify-content: center;
+  align-items: end;
   gap: 3rem;
 
   &__item {
-    background-color: $color-grey-dark-2;
-    padding: 1.2rem 2.4rem;
-    border-radius: 0.8rem;
+    border-radius: 1.2rem;
 
     display: flex;
     align-items: center;
     gap: 2.4rem;
 
-    &-name {
-      color: $color-grey-light-1;
-      padding: 0.8rem 0;
-      font-weight: 500;
+    &--light {
+      padding-inline: 1.2rem;
+      padding-top: 1.2rem;
+      background-color: $color-grey-dark-1;
     }
 
-    &-value {
-      font-weight: 700;
+    &--dark {
+      background-color: $color-grey-dark-2;
+      padding: 1.2rem 2.4rem;
+      margin-bottom: 0.4rem;
     }
+  }
 
-    &-bar {
-      background-color: $color-grey-light-1;
-      width: 2px;
-      height: 100%;
-      border-radius: 0.8rem;
-    }
+  &__name {
+    color: $color-grey-light-1;
+    padding: 0.8rem 0;
+    font-weight: 500;
+  }
+
+  &__value {
+    font-weight: 700;
+  }
+
+  &__bar {
+    background-color: $color-grey-light-1;
+    width: 2px;
+    height: 4rem;
+    border-radius: 1.2rem;
+  }
+
+  &__img {
+    width: 12rem;
+    border-radius: 1.2rem;
+    height: auto;
   }
 }

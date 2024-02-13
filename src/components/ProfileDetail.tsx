@@ -5,10 +5,10 @@ type ProfileDetail = {
 
 function ProfileDetail({ name, value }: ProfileDetail) {
   return (
-    <div className="profile__item">
-      <span className="profile__item-name">{name}</span>
-      <span className="profile__item-bar"></span>
-      <span className="profile__item-value">{value}</span>
+    <div className="profile__item profile__item--dark">
+      <span className="profile__name">{name}</span>
+      <span className="profile__bar"></span>
+      <span className="profile__value">{value}</span>
     </div>
   );
 }

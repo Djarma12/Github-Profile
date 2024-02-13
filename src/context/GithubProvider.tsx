@@ -1,18 +1,23 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { useGithubProfile } from "../hooks/useGithubProfie";
+import { useGithubRepos } from "../hooks/useGithubRepos";
 
 type GithubContextType = {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
-  isLoading: boolean;
+  isLoadingProfile: boolean;
   githubProfile: unknown;
+  isLoadingRepos: boolean;
+  githubRepos: unknown;
 };
 
 const githubContextObj = {
   search: "",
   setSearch: () => {},
-  isLoading: false,
+  isLoadingProfile: false,
   githubProfile: {},
+  isLoadingRepos: false,
+  githubRepos: {},
 };
 
 const GithubContext = createContext<GithubContextType>(githubContextObj);
@@ -23,11 +28,19 @@ type ChildrenType = {
 
 const GithubProvider = ({ children }: ChildrenType) => {
   const [search, setSearch] = useState("github");
-  const { isLoading, githubProfile } = useGithubProfile(search);
+  const { isLoadingProfile, githubProfile } = useGithubProfile(search);
+  const { isLoadingRepos, githubRepos } = useGithubRepos(search);
 
   return (
     <GithubContext.Provider
-      value={{ search, setSearch, isLoading, githubProfile }}
+      value={{
+        search,
+        setSearch,
+        isLoadingProfile,
+        githubProfile,
+        isLoadingRepos,
+        githubRepos,
+      }}
     >
       {children}
     </GithubContext.Provider>

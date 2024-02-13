@@ -3,7 +3,7 @@ import { getGithubProfile } from "../services/apiGithub";
 
 export function useGithubProfile(userName: string) {
   const {
-    isLoading,
+    isLoading: isLoadingProfile,
     data: githubProfile,
     error,
   } = useQuery({
@@ -11,5 +11,5 @@ export function useGithubProfile(userName: string) {
     queryFn: () => getGithubProfile(userName),
   });
 
-  return { isLoading, githubProfile, error };
+  return { isLoadingProfile, githubProfile, error };
 }
