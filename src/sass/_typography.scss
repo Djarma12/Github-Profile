@@ -4,8 +4,20 @@
   letter-spacing: 0.6px;
 }
 
+.heading-2 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
 .paragraph-1 {
   font-size: 2rem;
+  color: $color-grey-light-1;
+  font-weight: 500;
+}
+
+.paragraph-2 {
+  font-size: 1.6rem;
   color: $color-grey-light-1;
   font-weight: 500;
 }

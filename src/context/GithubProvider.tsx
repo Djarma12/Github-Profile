@@ -1,23 +1,28 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { useGithubProfile } from "../hooks/useGithubProfie";
 import { useGithubRepos } from "../hooks/useGithubRepos";
+import {
+  GithubProfileData,
+  GithubProfileError,
+  RepoType,
+} from "../services/apiGithub";
 
 type GithubContextType = {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   isLoadingProfile: boolean;
-  githubProfile: unknown;
+  githubProfile?: GithubProfileData | GithubProfileError;
   isLoadingRepos: boolean;
-  githubRepos: unknown;
+  githubRepos?: RepoType[] | GithubProfileError;
 };
 
 const githubContextObj = {
   search: "",
   setSearch: () => {},
   isLoadingProfile: false,
-  githubProfile: {},
+  githubProfile: undefined,
   isLoadingRepos: false,
-  githubRepos: {},
+  githubRepos: [],
 };
 
 const GithubContext = createContext<GithubContextType>(githubContextObj);

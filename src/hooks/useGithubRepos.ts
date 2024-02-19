@@ -6,10 +6,11 @@ export function useGithubRepos(userName: string) {
     isLoading: isLoadingRepos,
     data: githubRepos,
     error,
+    refetch,
   } = useQuery({
     queryKey: ["githubRepos", userName],
     queryFn: () => getGithubRepos(userName),
   });
 
-  return { isLoadingRepos, githubRepos, error };
+  return { isLoadingRepos, githubRepos, error, refetch };
 }

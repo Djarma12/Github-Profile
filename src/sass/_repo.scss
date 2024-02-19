@@ -1,5 +1,6 @@
 .repo {
   margin-top: 4.8rem;
+  margin-bottom: 6.4rem;
 
   &__list {
     list-style: none;
@@ -8,6 +9,13 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 3.2rem;
     align-items: start;
+
+    &:has(> #spinner) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      padding-top: 6.4rem;
+    }
   }
 
   &__item {
@@ -17,6 +25,24 @@
 
     & > :not(:last-child) {
       margin-bottom: 1.6rem;
+    }
+  }
+
+  &__link {
+    &:link {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-blue-light;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $color-grey-light-1;
     }
   }
 

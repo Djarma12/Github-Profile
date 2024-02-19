@@ -47,5 +47,11 @@
     width: 12rem;
     border-radius: 1.2rem;
     height: 12rem;
+
+    &--no {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

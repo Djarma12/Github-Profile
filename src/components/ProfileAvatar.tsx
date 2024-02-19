@@ -1,11 +1,15 @@
 type ProfileAvatarType = {
-  avatar: string;
+  avatar: string | undefined;
 };
 
 function ProfileAvatar({ avatar }: ProfileAvatarType) {
   return (
     <div className="profile__item profile__item--light">
-      <img className="profile__img" src={avatar} alt="GitHub avatar" />
+      {avatar ? (
+        <img className="profile__img" src={avatar} alt="GitHub avatar" />
+      ) : (
+        <span className="profile__img profile__img--no">/</span>
+      )}
     </div>
   );
 }
