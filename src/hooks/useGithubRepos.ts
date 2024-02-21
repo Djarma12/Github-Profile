@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { getGithubRepos } from "../services/apiGithub";
+import { SearchType } from "../context/GithubProvider";
 
-export function useGithubRepos(userName: string) {
+export function useGithubRepos(search: SearchType) {
   const {
     isLoading: isLoadingRepos,
     data: githubRepos,
     error,
-    refetch,
   } = useQuery({
-    queryKey: ["githubRepos", userName],
-    queryFn: () => getGithubRepos(userName),
+    queryKey: ["githubRepos", search],
+    queryFn: () => getGithubRepos(search),
   });
 
-  return { isLoadingRepos, githubRepos, error, refetch };
+  return { isLoadingRepos, githubRepos, error };
 }
