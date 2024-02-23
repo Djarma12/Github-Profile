@@ -6,10 +6,12 @@ import {
   GithubProfileError,
   RepoType,
 } from "../services/apiGithub";
+import { scrollToTop } from "../utils/helpers";
 
 type GithubContextType = {
-  search: string;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  search: SearchType;
+  setUserName: (newUserName: string) => void;
+  setFetchAll: (isFetchAll: boolean) => void;
   isLoadingProfile: boolean;
   githubProfile?: GithubProfileData | GithubProfileError;
   isLoadingRepos: boolean;
@@ -17,8 +19,12 @@ type GithubContextType = {
 };
 
 const githubContextObj = {
-  search: "",
-  setSearch: () => {},
+  search: {
+    userName: "",
+    fetchAll: false,
+  },
+  setUserName: () => {},
+  setFetchAll: () => {},
   isLoadingProfile: false,
   githubProfile: undefined,
   isLoadingRepos: false,
@@ -31,16 +37,36 @@ type ChildrenType = {
   children?: ReactNode;
 };
 
+export type SearchType = {
+  userName: string;
+  fetchAll: boolean;
+};
+
 const GithubProvider = ({ children }: ChildrenType) => {
-  const [search, setSearch] = useState("github");
-  const { isLoadingProfile, githubProfile } = useGithubProfile(search);
+  const [search, setSearch] = useState<SearchType>({
+    userName: "github",
+    fetchAll: false,
+  });
+  const { isLoadingProfile, githubProfile } = useGithubProfile(search.userName);
   const { isLoadingRepos, githubRepos } = useGithubRepos(search);
+
+  const setUserName = (newUserName: string) =>
+    setSearch((search) => {
+      return { ...search, userName: newUserName || "github", fetchAll: false };
+    });
+
+  const setFetchAll = (isFetchAll = false) =>
+    setSearch((search) => {
+      if (!isFetchAll) scrollToTop();
+      return { ...search, fetchAll: isFetchAll };
+    });
 
   return (
     <GithubContext.Provider
       value={{
         search,
-        setSearch,
+        setUserName,
+        setFetchAll,
         isLoadingProfile,
         githubProfile,
         isLoadingRepos,

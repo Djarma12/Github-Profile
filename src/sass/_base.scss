@@ -67,3 +67,30 @@ body {
     color: $color-grey-light-1;
   }
 }
+
+.button {
+  cursor: pointer;
+  display: block;
+  outline-offset: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  transition: all 0.2s;
+
+  &--text {
+    font-family: inherit;
+    background-color: transparent;
+    color: $color-white;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+
+    &:hover {
+      color: $color-blue-light;
+      animation: scaleButton 1.5s infinite;
+    }
+  }
+
+  &:focus {
+    outline: solid 3px $color-blue-light;
+  }
+}

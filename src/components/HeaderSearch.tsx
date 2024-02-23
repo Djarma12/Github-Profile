@@ -5,13 +5,13 @@ import Input from "./Input";
 import { useGithub } from "../context/GithubProvider";
 
 function HeaderSearch() {
-  const { setSearch } = useGithub();
+  const { setUserName } = useGithub();
   const searchRef = useRef<HTMLInputElement>(null);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!searchRef.current) return;
-    setSearch(searchRef.current?.value);
+    setUserName(searchRef.current?.value);
   }
 
   return (

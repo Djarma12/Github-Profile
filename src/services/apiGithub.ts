@@ -1,3 +1,5 @@
+import { SearchType } from "../context/GithubProvider";
+
 export type GithubProfileData = {
   name: string;
   bio: string;
@@ -29,15 +31,16 @@ export type RepoType = {
   html_url: string;
 };
 
-export async function getGithubRepos(
-  userName: string,
-  fetchAll: boolean = false
-): Promise<RepoType[] | GithubProfileError> {
+export async function getGithubRepos({
+  fetchAll,
+  userName,
+}: SearchType): Promise<RepoType[] | GithubProfileError> {
   const isFetchAllData = fetchAll ? "" : "?per_page=4";
-  console.log("a");
+
   const res = await fetch(
     `https://api.github.com/users/${userName}/repos${isFetchAllData}`
   );
+
   const data = await res.json();
   return data;
 }

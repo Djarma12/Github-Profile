@@ -4,6 +4,7 @@
 
   &__list {
     list-style: none;
+    margin-bottom: 6.4rem;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -29,7 +30,8 @@
   }
 
   &__link {
-    &:link {
+    &:link,
+    &:visited {
       color: inherit;
       text-decoration: none;
       transition: all 0.2s;
@@ -39,10 +41,6 @@
     &:active {
       color: $color-blue-light;
       text-decoration: underline;
-    }
-
-    &:visited {
-      color: $color-grey-light-1;
     }
   }
 
@@ -62,5 +60,10 @@
     font-size: 1.2rem;
     font-weight: 700;
     color: $color-grey-light-1;
+  }
+
+  &__button {
+    text-align: center;
+    margin-inline: auto;
   }
 }

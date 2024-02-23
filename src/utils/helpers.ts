@@ -11,3 +11,7 @@ export function daysElapsedSince(dateString: string): string {
 
   return differenceInDays.toString();
 }
+
+export const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
