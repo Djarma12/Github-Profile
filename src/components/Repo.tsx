@@ -1,5 +1,4 @@
 import { useGithub } from "../context/GithubProvider";
-import { scrollToTop } from "../utils/helpers";
 import Button from "./Button";
 import Heading from "./Heading";
 import RepoItem from "./RepoItem";
