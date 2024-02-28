@@ -10,10 +10,9 @@ $color-blue-light: #3662e3;
 $color-blue-dark: #1d1b48;
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; // 1200px
-$bp-large: 62.5em; // 1000px
-$bp-medium: 50em; // 800px
-$bp-small: 37.5em; // 600px
+$bp-desktop: 80em; // 1280px
+$bp-tablet: 64em; // 1024px
+$bp-mobile: 40em; // 640px
 
 /*
 - Font sizes (px)
@@ -35,7 +34,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
-  @media only screen and (max-width: $bp-largest) {
+  @media only screen and (max-width: $bp-desktop) {
     font-size: 50%;
   }
 }
@@ -50,9 +49,12 @@ body {
 }
 
 .main {
-  margin-inline: auto;
   max-width: 140rem;
   padding-inline: 10rem;
+
+  @media only screen and (max-width: $bp-tablet) {
+    padding-inline: 6.4rem;
+  }
 }
 
 .input {

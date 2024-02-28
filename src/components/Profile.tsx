@@ -10,9 +10,11 @@ function Profile() {
   return (
     <div className="profile">
       <ProfileAvatar avatar={profileExists?.avatar_url} />
-      <ProfileDetail name="Followers" value={profileExists?.followers} />
-      <ProfileDetail name="Following" value={profileExists?.following} />
-      <ProfileDetail name="Location" value={profileExists?.location} />
+      <div className="profile__stats">
+        <ProfileDetail name="Followers" value={profileExists?.followers} />
+        <ProfileDetail name="Following" value={profileExists?.following} />
+        <ProfileDetail name="Location" value={profileExists?.location} />
+      </div>
     </div>
   );
 }
