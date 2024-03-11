@@ -6,9 +6,13 @@
   padding-top: 5rem;
 
   &__search {
-    background-color: $color-grey-dark-1;
-    width: 50rem;
+    max-width: 50rem;
     margin-inline: auto;
+  }
+
+  &__form {
+    background-color: $color-grey-dark-1;
+    margin-inline: 2.4rem;
     border-radius: 0.8rem;
     padding: 1.6rem;
     transition: 0.3s all;

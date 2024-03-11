@@ -56,6 +56,10 @@ body {
   @media only screen and (max-width: $bp-tablet) {
     padding-inline: 6.4rem;
   }
+
+  @media only screen and (max-width: $bp-mobile) {
+    padding-inline: 2.4rem;
+  }
 }
 
 .input {

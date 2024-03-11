@@ -15,10 +15,12 @@ function HeaderSearch() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="header__search">
-      <img src={search} alt="Search icon" />
-      <Input placeholder="username" searchRef={searchRef} />
-    </form>
+    <div className="header__search">
+      <form onSubmit={handleSubmit} className="header__form">
+        <img src={search} alt="Search icon" />
+        <Input placeholder="username" searchRef={searchRef} />
+      </form>
+    </div>
   );
 }
 
